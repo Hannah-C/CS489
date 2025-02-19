@@ -12,7 +12,7 @@ int main(int argc, char** argv) {
     }
 
     // open specified file
-    FILE *file = fopen(argv[1], "rb");
+    FILE *file = fopen(argv[1], "r");
 
     // if failure to open file return error
     if (!file) {
@@ -20,9 +20,7 @@ int main(int argc, char** argv) {
         return -1;
     }
 
-    // moves to end of file
     fseek(file, 0, SEEK_END);
-    // determines current position in bytes (now at end of file)
     long size = ftell(file);
 
     fclose(file);

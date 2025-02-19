@@ -1,2 +1,2 @@
 all:
-	gcc -o main a1q2.c
+	gcc -o read_file a1q3.c

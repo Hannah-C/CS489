@@ -3,7 +3,7 @@
 
 #define BUFFSIZE 256
     
-int read_file(const char *filename) {
+int main(int argc, const char *filename) {
     FILE* ptr = fopen(filename, "r");
     
     if (ptr == NULL) {

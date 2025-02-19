@@ -10,7 +10,9 @@ int main(int argc, char** argv) {
         fprintf(stderr, "Please provide the address of a file as an input.\n");
         return -1;
     }
+    char fileAddress[BUFSIZE];
+    encodeShellString(fileAddress, BUFSIZE, argv[1]);
     char cmd[BUFSIZE];
-    snprintf(cmd, BUFSIZE, "wc -c < %s", argv[1]);
+    snprintf(cmd, BUFSIZE, "wc -c < %s", fileAddress);
     system(cmd);
 }

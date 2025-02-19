@@ -10,14 +10,18 @@ int main(int argc, char** argv) {
         fprintf(stderr, "Please provide the address of a file as an input.\n");
         return -1;
     }
+    
     FILE *file = fopen(argv[1], "rb");
     if (!file) {
         perror("Error opening file");
         return -1;
     }
 
+    int prev = ftell(file);
     fseek(file, 0, SEEK_END);
-    long size = ftell(file);
+    int size = ftell(file);
+    fseek(file,prev,SEEK_SET);
+
     fclose(file);
 
     printf("%ld\n", size);

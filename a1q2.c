@@ -16,7 +16,7 @@ int main(int argc, char** argv) {
 
     // if failure to open file return error
     if (!file) {
-        perror("Error opening file");
+        fprintf(stderr, "Error opening file.\n");
         return -1;
     }
 

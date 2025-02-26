@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define BUFFSIZE 256
+#define BUFFSIZE 2
     
-int main(int argc, const char *filename) {
-    FILE* ptr = fopen(filename, "r");
+int main(int argc, char** argv) {
+    FILE* ptr = fopen(argv[1], "r");
     
     if (ptr == NULL) {
         printf("File cannot be opened.\n");
